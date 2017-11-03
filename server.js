@@ -13,7 +13,7 @@ app.set('view engine', 'handlebars');
 
 //config page favicon and public folder
 var favicon = require('serve-favicon');
-app.use(favicon(path.join(__dirname, 'public/assets/img', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, '/public/img', 'Favicon.ico')));
 app.use(express.static(path.join(__dirname, 'public')));
 
 //config body-parser 

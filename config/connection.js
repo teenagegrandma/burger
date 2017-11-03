@@ -1,15 +1,17 @@
-var mysql = require('../node_modules/mysql');
+var mysql = require('mysql');
+var connection;
 
-if (process.env.JAWSDB_URL)
+if (process.env.JAWSDB_URL) {
 	connection = mysql.createConnection(process.env.JAWSDB_URL);
+}
 else {
-	var keys = require('./keys');
+	//var keys = require('./keys');
 
 	connection = mysql.createConnection({
-		host: keys.db.host,
-		user: keys.db.user,
-		password: keys.db.password,
-		databse: keys.db.database
+		host: 'localhost',
+		user: 'root',
+		password: 'YES',
+		database: 'burgers_db'
 	});
 }
 
@@ -18,7 +20,7 @@ connection.connect(function(err) {
 		console.error('Connection error: ' + err.stack);
 		return;
 	}
-	console.log('Connection threadId: ' + conneciton.threadId);
+	console.log('Connection threadId: ' + connection.threadId);
 });
 
 module.exports = connection;

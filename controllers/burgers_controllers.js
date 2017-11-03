@@ -30,12 +30,12 @@ router.put('/burgers/update/:id', function(req, res) {
 	});
 });
 
-router.delete('/burgers/update/:id', function(req, res) {
-	var condition = 'burger_id = ' req.params.id;
+//router.delete('/burgers/update/:id', function(req, res) {
+	//var condition = 'burger_id = ' req.params.id;
 
-	burger.trashBurger(condition, function() {
-		res.redirect('/');
-	});
-});
+	//burger.trashBurger(condition, function() {
+		//res.redirect('/');
+	//});
+//});
 
 module.exports = router;
