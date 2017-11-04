@@ -1,31 +1,26 @@
-var orm = require('../config/orm');
+//dependency
+var orm = require('../config/orm.js');
 
+// call the orm functions 
 var burger = {
-	table : 'burgers',
-
-	allBurgers: function(cb) {
-		orm.all(this.table, function(res) {
-			cb(res);
+	selectAll: function(callback) {
+		orm.selectAll(function(res) {
+			callback(res);
+		});
+	},
+	
+	insertOne: function(burger_name, callback) {
+		orm.insertOne(burger_name, function(res) {
+			callback(res);
 		});
 	},
 
-	saveburger: function(cols, vals, cb) {
-		orm.create(this.table, cols, vals, function(res) {
-			cb(res);
-		});
-	},
-
-	devourBurger: function(objColVals, condition, cb) {
-		orm.update(this.table, objColVals, condition, function(res) {
-			cb(res);
-		});
-	},
-
-	trashBurger: function(condition, cb) {
-		orm.delete(this.table, condition, function(res) {
-			cb(res);
+	updateOne: function(burger_id, callback) {
+		orm.updateOne(burger_id, function(res) {
+			callback(res);
 		});
 	}
 };
 
+//exports
 module.exports = burger;
