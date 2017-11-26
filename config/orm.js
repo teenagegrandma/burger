@@ -1,5 +1,5 @@
 //connection.js dependency
-var connection = require('./connection');
+var connection = require('./connection.js');
 
 //connect to MySQL database
 connection.connect(function(err) {
@@ -31,29 +31,36 @@ var orm = {
 		var timestamp = '' + d.getFullYear() + '-'; 
 		var month = '' + (d.getMonth() + 1); 
 			//1 digit month handling
-			if(month.length ==1) {
+			if(month.length == 1) {
 				month = '0' + month;
 			}
 		timestamp += month + '-';
-		var hour ='' + d.getHours(); 
+		var day ='' + d.getDate(); 
+			//1 digit months
+			if(day.length == 1) {
+				day = '0' + day;
+			}
+		timestamp += day + ' ';
+		var hour = '' + d.getHours();
 			//1 digit hours
-			if(hour.length ==1) {
+			if(hour.length == 1) {
 				hour = '0' + hour;
 			}
 		timestamp += hour + ':';
 		var minute = '' + d.getMinutes();
-			//1 digit minute
-			if(minute.length ==1) {
+			//if 1 digit minute
+			if(minute.length == 1) {
 				minute = '0' + minute;
 			}
 		timestamp += minute + ':';
 		var second = '' + d.getSeconds();
-			//if 1 digit second
-			if(second.length =1) {
+			//1 digit second
+			if(second.length == 1){
 				second = '0' + second;
 			}
 		timestamp += second;
 
+		
 		//run MySQL query
 		connection.query('INSERT INTO burgers SET ?', {
 			burger_name: burger_name,
