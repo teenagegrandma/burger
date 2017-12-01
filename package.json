@@ -4,7 +4,7 @@
   "description": "Eat-Da-Burger!: a burger logger with MySQL, Node, Express, Handlebars and a homemade ORM. It uses the MVC design pattern, Node and MySQL to query and route data in my app, and Handlebars to generate my HTML.",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "engines": {
@@ -25,9 +25,13 @@
   "homepage": "https://github.com/teenagegrandma/burger#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
+    "debug": "^3.1.0",
     "express": "^4.16.2",
     "express-handlebars": "^3.0.0",
+    "express-router": "0.0.1",
+    "http": "0.0.0",
     "method-override": "^2.3.10",
-    "mysql": "^2.15.0"
+    "mysql": "^2.15.0",
+    "orm": "^4.0.1"
   }
 }
