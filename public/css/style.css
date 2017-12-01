@@ -1,5 +1,6 @@
 body {
-	background-color: #f4c242;
+	background-color: #ec8e4b;
+	font-family: 'Dosis', sans-serif;
 }
 
 img {
@@ -8,9 +9,10 @@ img {
 
 .red_font {
 	color: #bc001f;
+	font-size: 40px;
 }
 
 .tiny_text {
-	font-size: 11px;
+	font-size: 20px;
 	color: #5da82f;
 }
