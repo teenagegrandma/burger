@@ -2,8 +2,9 @@
   "name": "burger",
   "version": "1.0.0",
   "description": "Eat-Da-Burger!: a burger logger with MySQL, Node, Express, Handlebars and a homemade ORM. It uses the MVC design pattern, Node and MySQL to query and route data in my app, and Handlebars to generate my HTML.",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
+    "start": "node server.js"
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "engines": {
